@@ -10,3 +10,6 @@ The AI for Ollama can be installed with the following command:
 `llama pull gemma4:e2b`
 
 
+
+Setup the embedding:
+`ollama pull bge-m3` 

@@ -8,7 +8,7 @@ load_dotenv()
 testPrompt = "Hello, Sir :)"
 
 #get .env values
-model = os.getenv("OLLAMA_MODEL") #ToDo dynamicly pull moddel list and throw error when list is empty
+model = os.getenv("OLLAMA_CHAT_MODEL") #ToDo dynamicly pull moddel list and throw error when list is empty
 ollamaUrl = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
 #start request to model

@@ -12,4 +12,7 @@ The AI for Ollama can be installed with the following command:
 
 
 Setup the embedding:
+
 `ollama pull bge-m3` 
+
+German example of AI answering based on test document

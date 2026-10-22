@@ -15,3 +15,6 @@ def initData():
 
     for c in chunks:
         upsertEmbed(c,embedChunks(c))
+
+if __name__ == "__main__":
+    initData()

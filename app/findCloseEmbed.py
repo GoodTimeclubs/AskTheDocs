@@ -11,4 +11,9 @@ def findCloseEmbed(Query):
         limit=5
     )
 
-    return results.points
+    result = ""
+
+    for r in results.points:
+        result += r.payload["Text"]
+    
+    return result

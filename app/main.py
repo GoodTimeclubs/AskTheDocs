@@ -1,9 +1,4 @@
-from initData import initData
-from findCloseEmbed import findCloseEmbed
-
-initData()
-
-results = findCloseEmbed("Wann kommt mein Lumen 5 Roboter?")
-
-for result in results:
-    print(result.payload["Text"])
+from askModel import askModel
+question = input("How can I help you today?\n:")
+answer = askModel(question)
+print(answer)

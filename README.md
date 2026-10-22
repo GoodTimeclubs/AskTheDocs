@@ -15,4 +15,11 @@ Setup the embedding:
 
 `ollama pull bge-m3` 
 
-German example of AI answering based on test document
+German example of AI answering based on test document:
+
+Conversation:
+<img width="1005" height="96" alt="image" src="https://github.com/user-attachments/assets/d0b6ce18-4d60-4c5b-8d1c-234919dff3e8" />
+
+Sourcefile (one of 10 files with only the relevant part given to the AI):
+<img width="789" height="994" alt="image" src="https://github.com/user-attachments/assets/6c1d51e9-7dfe-4ae6-92de-e073ceea9904" />
+

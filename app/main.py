@@ -1,21 +1,9 @@
-from createChunks import createChunks
-from embedChunks import embedChunks
-import time
-i = 0
-starttime = time.time()
+from initData import initData
+from findCloseEmbed import findCloseEmbed
 
-chunks = createChunks()
+initData()
 
-afterChunking = time.time()
+results = findCloseEmbed("Wann kommt mein Lumen 5 Roboter?")
 
-for c in chunks:
-    print(c)
-    print(embedChunks(c))
-    i += 1
-
-afterEmbed = time.time()
-
-print(f"Total time: {afterEmbed-starttime:.2f} seconds.")
-print(f"Chunking time: {afterChunking-starttime:.2f} seconds.")
-print(f"Embedding time: {afterEmbed-afterChunking:.2f} seconds.")
-print(i)
+for result in results:
+    print(result.payload["Text"])

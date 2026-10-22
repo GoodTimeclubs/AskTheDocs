@@ -18,4 +18,4 @@ def embedChunks(input):
     }
     r = requests.post(f"{ollamaUrl}/api/embed",json=payload, timeout=500)
 
-    return(r.json()["embeddings"])
+    return(r.json()["embeddings"][0])

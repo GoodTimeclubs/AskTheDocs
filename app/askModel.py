@@ -1,9 +1,12 @@
 import os
 import requests
 from dotenv import load_dotenv
+from numpy.f2py.auxfuncs import throw_error
+
 from findCloseEmbed import findCloseEmbed
 
-
+class ollamaError(Exception):
+    pass
 
 def askModel(question):
     #read .env file
@@ -26,7 +29,9 @@ def askModel(question):
         "prompt":question,
         "system":system,
         "stream":False,
-        "options" : {"temperature": 0}
+        "options" : {"temperature": 1}
     }
     r = requests.post(f"{ollamaUrl}/api/generate",json=payload, timeout=500)
+    if(r.status_code != 200):
+        raise ollamaError(r.json()["error"])
     return r.json()["response"]

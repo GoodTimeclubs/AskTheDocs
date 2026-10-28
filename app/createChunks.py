@@ -4,7 +4,6 @@ global blocks
 global text
 text = []
 blocks = []
-chunks = []
 docFolder = Path(__file__).parent / ".." / "data"
 
 
@@ -15,13 +14,24 @@ def appendBlock(h1,h2,h3):
         text = []
 
 def blockToText(block):
-    result = ""
-    for headline in block[:3]:
-        if headline:
-            result += headline + "\n"
-    for line in block[3]:
-        result += line + "\n"
-    return result
+    if block:
+        result = ""
+        for headline in block[:3]:
+            if headline:
+                result += headline + "\n"
+        for line in block[3]:
+            result += line + "\n"
+        return result
+    return None
+
+def blocksToChunks():
+    chunks = []
+    for b in blocks:
+        textBlock = blockToText(b)
+        if textBlock != None:
+            chunks.append(textBlock)
+
+    return chunks
         
 def createChunks():
     headline1 = None
@@ -56,10 +66,5 @@ def createChunks():
                 line = f.readline()
             appendBlock(headline1,headline2,headline3)
 
-
-
-    for b in blocks:
-        chunks.append(blockToText(b))
-
-    return chunks
+    return blocksToChunks()
     

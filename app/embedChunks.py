@@ -18,4 +18,9 @@ def embedChunks(input):
     }
     r = requests.post(f"{ollamaUrl}/api/embed",json=payload, timeout=500)
 
+    print(r.json()["embeddings"])
+
     return(r.json()["embeddings"][0])
+
+if __name__ == "__main__":
+    embedChunks("input")

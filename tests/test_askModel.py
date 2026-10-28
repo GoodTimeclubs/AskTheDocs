@@ -41,6 +41,7 @@ def test_askModel_uses_env_values(mock_findCloseEmbed, mock_post,mock_load_doten
 
     #test .env usage
     assert url == "http://test:11434/api/generate"
+    mock_load_dotenv.assert_called()
 
 
 

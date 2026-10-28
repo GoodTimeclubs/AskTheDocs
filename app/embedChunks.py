@@ -1,6 +1,7 @@
 import os
 import requests
 from dotenv import load_dotenv
+from errors import  ollamaError
 
 def embedChunks(input):
     #read .env file
@@ -18,7 +19,8 @@ def embedChunks(input):
     }
     r = requests.post(f"{ollamaUrl}/api/embed",json=payload, timeout=500)
 
-    print(r.json()["embeddings"])
+    if (r.status_code != 200):
+        raise ollamaError(r.json()["error"])
 
     return(r.json()["embeddings"][0])
 

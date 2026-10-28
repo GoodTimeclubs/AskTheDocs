@@ -1,12 +1,11 @@
+import json
 import os
 import requests
 from dotenv import load_dotenv
 from numpy.f2py.auxfuncs import throw_error
+from errors import ollamaError
 
 from findCloseEmbed import findCloseEmbed
-
-class ollamaError(Exception):
-    pass
 
 def askModel(question):
     #read .env file

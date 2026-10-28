@@ -1,7 +1,7 @@
 from unittest.mock import patch
 import pytest
 from askModel import askModel
-from askModel import ollamaError
+from errors import ollamaError
 
 @patch("askModel.load_dotenv")
 @patch("askModel.requests.post")

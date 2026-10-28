@@ -1,0 +1,2 @@
+class ollamaError(Exception):
+    pass

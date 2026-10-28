@@ -12,7 +12,7 @@ def initData():
     try:
         createCollection()
     except:
-        print("Info : using existing collection")
+        raise qdrantError("Probably collection is already initialized?")
 
     for c in chunks:
         upsertEmbed(c,embedChunks(c))

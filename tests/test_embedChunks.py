@@ -4,7 +4,7 @@ import pytest
 
 from errors import  ollamaError
 from embedChunks import embedChunks
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 @patch("embedChunks.load_dotenv")
 @patch("embedChunks.requests.post")

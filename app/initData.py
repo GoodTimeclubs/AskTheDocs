@@ -2,6 +2,7 @@ from createChunks import createChunks
 from embedChunks import embedChunks
 from storeEmbed import upsertEmbed
 from storeEmbed import createCollection
+from errors import qdrantError
 
 
 def initData():
